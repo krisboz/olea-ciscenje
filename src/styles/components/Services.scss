@@ -1,0 +1,34 @@
+@import "../colors";
+
+#services {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 1rem;
+    background-color: $light-blue-1;
+
+    h1 {
+        color: $brand-blue;
+    }
+
+    .services-description-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        place-items: center;
+
+        .services-description {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .image-container {
+
+
+            img {
+                width: 450px;
+                object-fit: contain;
+            }
+        }
+    }
+}

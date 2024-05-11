@@ -1,0 +1,57 @@
+@import "../colors";
+
+.home-container {
+    .hero-container {
+        position: relative;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+
+
+
+        .hero-text-container {
+            /* From https://css.glass */
+            background: rgba(0, 123, 255, 0.22);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(0, 123, 255, 0.3);
+
+
+            padding: 1rem 2rem;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            place-items: center;
+
+            .hero-title {
+                font-size: 3.5rem;
+                font-weight: 500;
+            }
+
+            .hero-subtext {
+                font-size: 2rem;
+                font-weight: 300;
+            }
+
+            p {
+                font-size: 2rem;
+            }
+        }
+
+    }
+
+    .price-contact-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: $light-blue-2;
+        padding: 2.5rem 0;
+
+    }
+
+}
