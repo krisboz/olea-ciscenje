@@ -3,28 +3,27 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/logo.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://api.emailjs.com; 
-             style-src 'self' https://fonts.googleapis.com; 
-             script-src 'self' 'nonce-1233212552' https://www.googletagmanager.com https://www.google-analytics.com; 
-             img-src 'self' data:; 
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; 
+             style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; 
+             script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com; 
+             img-src 'self' https://olea-nekretnine.hr data:; 
              font-src 'self' https://fonts.gstatic.com;">
   <title>Olea servis za čišćenje</title>
   <script type="module" crossorigin src="/assets/index-BE1TjgXC.js"></script>
   <link rel="stylesheet" crossorigin href="/assets/index-D7fDGUSi.css">
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XJ0XJ5T433"></script>
-<script nonce="1233212552">
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
-  gtag('js', new Date());
-
-  gtag('config', 'G-XJ0XJ5T433');
-</script>
 
 <body>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XJ0XJ5T433"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-XJ0XJ5T433');
+  </script>
   <div id="root"></div>
 </body>
 
