@@ -1,5 +1,4 @@
 import React from "react";
-import Pricelist from "./../components/Pricelist";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import img from "../assets/pricelist.jpg";
@@ -8,6 +7,11 @@ import "../styles/components/ContentBlock.scss";
 
 import "../styles/_cta_link.scss";
 import { MdOutlineEmergency as HitnoIcon } from "react-icons/md";
+
+// Live price list published from Marketino ("Objavi cjenik na webu").
+// Prices are edited in Marketino, not here.
+const MARKETINO_PRICELIST_URL =
+  "https://cjenik.marketino.hr/olea-obrt-za-usluge-vl-luka-majstorovic-novalja-mociscak-14-rkc2zz7ydt";
 
 const PriceList = () => {
   const { t } = useTranslation();
@@ -37,6 +41,16 @@ const PriceList = () => {
             {t("pageContact")}
           </Link>
         </div>
+      </section>
+      <section className="marketino-pricelist">
+        <iframe
+          src={MARKETINO_PRICELIST_URL}
+          title={t("priceListFrameTitle")}
+          loading="lazy"
+        ></iframe>
+        <a href={MARKETINO_PRICELIST_URL} target="_blank" rel="noopener">
+          {t("priceListOpen")}
+        </a>
       </section>
     </main>
   );

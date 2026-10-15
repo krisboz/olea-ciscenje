@@ -78,6 +78,33 @@
 
 }
 
+.marketino-pricelist {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 2rem 2rem;
+
+    iframe {
+        width: 100%;
+        max-width: 900px;
+        height: 80vh;
+        border: none;
+        border-radius: 16px;
+        background-color: white;
+    }
+
+    a {
+        color: white;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .marketino-pricelist {
+        padding: 0 .5rem 1.5rem;
+    }
+}
+
 .pre-price-text {
     background-color: $brand-yellow;
     padding: .5rem 1rem;

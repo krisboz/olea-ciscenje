@@ -24,7 +24,9 @@ i18n.use(initReactI18next).init({
           "Vršimo sve potrebne aktivnosti sa svrhom očuvanja sigurnosti i funkcionalnosti nekretnine te o svemu pisanim putem izvještavamo vlasnika nekretnine.",
         servicesHomeButtonText: "Naše usluge",
         pricePagePara1:
-          "Cijene redovitog održavanja objekta, okoliša i slično se formiraju na osnovu traženih usluga.",
+          "Aktualni cjenik naših usluga nalazi se u nastavku.",
+        priceListOpen: "Otvori cjenik u novom prozoru",
+        priceListFrameTitle: "Cjenik usluga",
         homeAboutTitle: "O nama",
         homeAboutEmphasized:
           "OLEA Vam pruža usluge održavanja Vašega apartmana, kuće za odmor ili ville - prilagođeno Vašim potrebama na području grada Novalje.",
@@ -166,7 +168,9 @@ i18n.use(initReactI18next).init({
           "We perform all necessary activities to maintain the safety and functionality of the property and we report everything in writing to the property owner.",
         servicesHomeButtonText: "Our Services",
         pricePagePara1:
-          "Prices for regular maintenance of the building, environment, etc. are formed based on the requested services.",
+          "Our current price list is shown below.",
+        priceListOpen: "Open the price list in a new window",
+        priceListFrameTitle: "Price list",
         homeAboutTitle: "About Us",
         homeAboutEmphasized:
           "OLEA provides you with maintenance services for your apartment, holiday home or villa - tailored to your needs in the area of the city of Novalja.",
@@ -303,7 +307,9 @@ i18n.use(initReactI18next).init({
           "Wir führen alle notwendigen Tätigkeiten zur Erhaltung der Sicherheit und Funktionsfähigkeit der Immobilie durch und erstatten dem Immobilieneigentümer darüber schriftlich Bericht.",
         servicesHomeButtonText: "Unsere Leistungen",
         pricePagePara1:
-          "Preise für regelmäßige Instandhaltung von Gebäuden, Umgebung usw. werden basierend auf den angeforderten Dienstleistungen erstellt.",
+          "Unsere aktuelle Preisliste finden Sie unten.",
+        priceListOpen: "Preisliste in neuem Fenster öffnen",
+        priceListFrameTitle: "Preisliste",
         homeAboutTitle: "Über uns",
         homeAboutEmphasized:
           "OLEA bietet Ihnen Wartungsdienstleistungen für Ihre Wohnung, Ihr Ferienhaus oder Ihre Villa – zugeschnitten auf Ihre Bedürfnisse im Bereich der Stadt Novalja.",
