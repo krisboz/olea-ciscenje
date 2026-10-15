@@ -205,7 +205,7 @@ popravci-service-4: "Provjera ispravnosti te zamjena klima uređaja"
       {renderZgrada}
 
       <div className="buttons-container">
-        <Link className="cta-link" to="/prices">
+        <Link className="cta-link" to="/contact">
           {t("homeBtnVal")}
         </Link>
       </div>
@@ -215,7 +215,7 @@ popravci-service-4: "Provjera ispravnosti te zamjena klima uređaja"
         imgSide={"right"}
         img={sidePhoto}
         button={t("homeBtnVal")}
-        buttonTarget={"/prices"}
+        buttonTarget={"/contact"}
         bgColor={"dark"}
         title={t("")}
         paragraphs={[t("servicesPOne")]}

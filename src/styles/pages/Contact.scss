@@ -1,13 +1,20 @@
 @import "../colors";
 
 .contact-form-container {
-    background-color: $brand-blue;
     padding: 1rem;
     border-radius: 12px;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 450px;
+
+
+
+    /* From https://css.glass */
+    background: #0166d3bd;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(1, 102, 211, 0.3);
 
 }
 
@@ -107,6 +114,7 @@
                 p {
                     display: grid;
                     place-content: center;
+                    text-shadow: 1px 1px 1px black;
                 }
             }
 

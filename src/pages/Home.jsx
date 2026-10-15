@@ -1,7 +1,7 @@
 import React from "react";
 import bgPhoto from "../assets/home-background.jpg";
 import sidePhoto from "../assets/kljuc.jpg";
-import sidePhoto2 from "../assets/grad-novalja.png";
+import sidePhoto2 from "../assets/grad-novalja.jpg";
 
 import "../styles/pages/Home.scss";
 import { useTranslation } from "react-i18next";
