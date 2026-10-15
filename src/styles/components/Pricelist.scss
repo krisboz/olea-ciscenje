@@ -1,6 +1,18 @@
 @import "../colors";
+@import "../cta_link";
+$bgcolor : #21ac70;
+$btncolor :#fb6a30;
+$headingbg : #f0f4f2;
 
 .pricelist-container {
+    max-width: 450px;
+    min-width: 215px;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+
+
 
     /* Table Styles */
     table {
@@ -11,8 +23,9 @@
             background-color: #c1c2f0;
 
             th {
-                background-color: $brand-blue;
-                color: white;
+                background-color: $brand-yellow;
+
+                color: black;
                 justify-content: start;
             }
         }
@@ -20,9 +33,11 @@
         tbody {
             tr:nth-child(even) {
                 background-color: #d7d7f4;
+                color: black;
             }
 
             tr {
+                color: white;
 
                 td {
                     padding: 18px;
@@ -31,6 +46,71 @@
                 }
             }
         }
+    }
+
+    .distance {
+        color: white;
+    }
+
+
+
+}
+
+
+
+.pricelist-container {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+
+    .table {
+        background: $light-blue-2;
+        padding: 1rem;
+        width: 90%;
+        border-radius: 8px;
+
+        -webkit-transform: translateY(0%);
+        transform: translateY(0%);
+        -webkit-transition: .3s;
+        transition: .3s;
+
+        &:hover {
+            -webkit-transform: translateY(-2%);
+            transform: translateY(-2%);
+            -moz-box-shadow: 1px 8px 5px rgba(0, 0, 0, .2);
+            -webkit-box-shadow: 1px 8px 5px rgba(0, 0, 0, .2);
+            box-shadow: 1px 8px 5px rgba(0, 0, 0, .2);
+        }
+
+
+
+        .block {
+            display: block;
+            width: 100%;
+            margin: 20px 50%;
+            -webkit-transform: translate(-50%);
+            transform: translate(-50%);
+            border-bottom: 1px dashed rgba(0, 0, 0, .2);
+
+            .price {
+                float: right;
+                position: relative;
+                right: 30px;
+
+            }
+
+
+        }
+
+
+    }
+
+    p {
+        text-align: left;
+        color: #272625;
+        font-weight: 600;
+        font-size: 15px;
     }
 
 }

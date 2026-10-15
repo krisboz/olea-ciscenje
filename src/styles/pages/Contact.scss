@@ -1,0 +1,230 @@
+@import "../colors";
+
+.contact-form-container {
+    background-color: $brand-blue;
+    padding: 1rem;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 450px;
+
+}
+
+.contact-page {
+    background-color: $brand-blue;
+    display: flex;
+    flex-direction: column;
+    padding: 0 5%;
+    color: white;
+
+    h1 {
+        background-color: $brand-yellow;
+        color: black;
+        padding: .5rem 1rem;
+        width: fit-content;
+    }
+
+    .contact-content-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 2rem 0;
+
+        .left {
+            display: flex;
+            flex-direction: column;
+            place-items: center;
+            justify-content: center;
+            gap: 1rem;
+            border-radius: 12px;
+            padding: 1rem;
+
+
+            a {
+                background-color: $brand-yellow;
+                font-size: large;
+                padding: .5rem 1rem;
+                color: black;
+                gap: .5rem;
+                border-radius: 12px;
+                display: flex;
+                place-content: center;
+                align-items: center;
+
+                svg {
+                    color: rgb(0, 146, 0);
+                }
+
+
+            }
+
+            .phone-link {
+                margin-bottom: 1rem;
+
+                svg {
+                    color: green;
+                }
+
+                &:hover {
+                    svg {
+                        animation: shake .5s linear 2;
+                    }
+                }
+            }
+
+            .mail-link {
+                margin-top: 1rem;
+
+                svg {
+                    color: $brand-blue;
+
+                }
+
+                &:hover {
+                    svg {
+                        animation: shake .5s linear 2;
+                    }
+                }
+            }
+
+
+
+
+        }
+
+        .right {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+
+            .pre-form-text {
+                display: grid;
+                place-content: center;
+
+                p {
+                    display: grid;
+                    place-content: center;
+                }
+            }
+
+
+
+        }
+    }
+}
+
+.logo-container {
+    background-color: white;
+    padding: .3rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    width: 130px;
+
+    img {
+        width: 45px;
+        height: auto;
+        border-radius: 12px;
+    }
+
+    .logo-subtext {
+        width: 70px;
+        border-radius: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .contact-page {
+        align-items: center;
+
+        .contact-content-container {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .contact-page {
+        min-height: 120vh;
+    }
+
+    .contact-form-container {
+        width: 350px;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .contact-page {
+        .contact-content-container {
+
+            .left {
+                img {
+                    width: 250px;
+                }
+            }
+
+            .right {
+                a {
+                    font-size: large;
+                }
+            }
+        }
+    }
+
+    .contact-form-container {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 303px) {
+    .contact-page {
+        .contact-content-container {
+
+            .left {
+                img {
+                    width: 250px;
+                }
+            }
+
+            .right {
+                a {
+                    font-size: small;
+                }
+            }
+        }
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(0deg);
+        transform: scale(1);
+    }
+
+    20% {
+        transform: rotate(7deg);
+
+    }
+
+    40% {
+        transform: rotate(0deg);
+        transform: scale(1.2);
+    }
+
+    60% {
+        transform: rotate(-7deg);
+    }
+
+    80% {
+        transform: rotate(0deg);
+        transform: scale(1);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}

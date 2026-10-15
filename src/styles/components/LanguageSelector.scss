@@ -1,0 +1,52 @@
+@import "../colors";
+
+
+.language-icon-container {
+    display: flex;
+    width: fit-content;
+
+    svg {
+        width: 20px;
+        border-radius: 100%;
+        border: 1px solid black;
+        cursor: pointer;
+    }
+
+    button {
+        background: none;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .language-container {
+            font-size: .7rem;
+        }
+    }
+}
+
+
+
+// Keyframes for fade-in animation
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .language-icon-container {
+
+
+
+        .language-selector-container {
+            right: -5px;
+        }
+    }
+}

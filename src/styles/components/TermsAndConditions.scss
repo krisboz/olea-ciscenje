@@ -1,3 +1,28 @@
+@import "../colors";
+
+.back-link-container {
+    padding: 2rem 2rem;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 3rem;
+
+    a {
+        display: flex;
+        align-items: center;
+        background-color: $brand-yellow;
+        color: black;
+        padding: .2rem .6rem;
+    }
+}
+
 .terms-and-conditions-page {
     padding: 2rem 1rem 1rem 3rem;
+}
+
+@media screen and (max-width: 768px) {
+    .terms-and-conditions-page {
+
+        padding: .5rem .5rem;
+    }
 }

@@ -1,0 +1,16 @@
+@import "./colors";
+
+.cta-link {
+    background-color: $brand-yellow;
+    color: black;
+    text-decoration: none;
+    border: 1px solid $brand-yellow;
+    padding: .5rem 1.5rem;
+    transition: .3s ease-in-out;
+    border-radius: 12px;
+
+    &:hover {
+        background-color: rgb(255, 187, 0);
+        border-color: yellow;
+    }
+}

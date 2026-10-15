@@ -72,3 +72,34 @@
         }
     }
 }
+
+@media screen and (max-width: 768px) {
+    .contact-component {
+        width: 90%;
+        border-radius: 15px;
+        padding: 1.5rem;
+
+
+
+        .contact-data-container {
+            display: flex;
+            flex-direction: column;
+            place-items: center;
+            color: $white;
+            border: 1px solid $test-accent-color;
+            padding: 3rem 0;
+
+
+            .action-link-dark {
+                color: $white;
+                border: 1px solid $white;
+
+
+            }
+
+
+
+
+        }
+    }
+}
