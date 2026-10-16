@@ -7,11 +7,14 @@ import "../styles/components/ContentBlock.scss";
 
 import "../styles/_cta_link.scss";
 import { MdOutlineEmergency as HitnoIcon } from "react-icons/md";
-
-// Live price list published from Marketino ("Objavi cjenik na webu").
+// Generated from Marketino by scripts/fetch-pricelist.mjs before each build.
 // Prices are edited in Marketino, not here.
-const MARKETINO_PRICELIST_URL =
-  "https://cjenik.marketino.hr/olea-obrt-za-usluge-vl-luka-majstorovic-novalja-mociscak-14-rkc2zz7ydt";
+import pricelist from "../data/pricelist.json";
+
+const formatPrice = (value) =>
+  new Intl.NumberFormat("hr-HR", { style: "currency", currency: "EUR" }).format(
+    value
+  );
 
 const PriceList = () => {
   const { t } = useTranslation();
@@ -42,16 +45,46 @@ const PriceList = () => {
           </Link>
         </div>
       </section>
-      <section className="marketino-pricelist">
-        <iframe
-          src={MARKETINO_PRICELIST_URL}
-          title={t("priceListFrameTitle")}
-          loading="lazy"
-        ></iframe>
-        <a href={MARKETINO_PRICELIST_URL} target="_blank" rel="noopener">
-          {t("priceListOpen")}
-        </a>
+
+      <section className="price-cards">
+        {pricelist.items.map((item) => (
+          <article className="price-card" key={item.name}>
+            <h2>{item.name}</h2>
+            <div className="price-card-prices">
+              {item.salePrice !== null ? (
+                <>
+                  <span className="price-current">
+                    {formatPrice(item.salePrice)}
+                  </span>
+                  <span className="price-regular">
+                    {formatPrice(item.price)}
+                  </span>
+                  {item.saleName && (
+                    <span className="price-sale-name">{item.saleName}</span>
+                  )}
+                </>
+              ) : (
+                <span className="price-current">{formatPrice(item.price)}</span>
+              )}
+            </div>
+            {item.anchorPrice !== null && (
+              <p className="price-anchor">
+                {t("priceListAnchor", { date: pricelist.anchorDate })}:{" "}
+                {formatPrice(item.anchorPrice)}
+              </p>
+            )}
+          </article>
+        ))}
       </section>
+
+      <div className="price-downloads">
+        <a href={pricelist.csvUrl} download>
+          {t("priceListDownload")}
+        </a>
+        <a href={pricelist.pageUrl} target="_blank" rel="noopener">
+          {t("priceListMarketino")}
+        </a>
+      </div>
     </main>
   );
 };
