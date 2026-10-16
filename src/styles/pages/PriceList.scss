@@ -3,11 +3,13 @@
 .prices-page {
     display: flex;
     flex-direction: column;
-    padding-bottom: 1rem;
+    align-items: center;
+    gap: 2rem;
+    padding-bottom: 3rem;
     background-color: $brand-blue;
 
-
     .header-container {
+        align-self: stretch;
         padding: 0rem 2rem;
 
         .prices-heading {
@@ -19,242 +21,169 @@
             place-items: center;
         }
     }
+}
 
-    .prices-content-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        background-color: $brand-blue;
-        margin-top: 2rem;
+.pricelist-panel {
+    width: 100%;
+    max-width: 820px;
+    box-sizing: border-box;
+    background-color: $white;
+    border-top: 6px solid $brand-yellow;
+    border-radius: 16px;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .15);
 
-        .left {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
+    .pricelist-header {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: .75rem;
+        border-bottom: 2px solid $brand-blue;
+        font-size: .85rem;
+        font-weight: 600;
+        letter-spacing: .05em;
+        text-transform: uppercase;
+        color: $brand-blue;
+    }
 
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
 
+    .pricelist-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 1.5rem;
+        padding: 1.25rem 0;
+        border-bottom: 1px solid $light-blue-1;
+    }
 
+    .pricelist-service {
+        display: flex;
+        flex-direction: column;
+        gap: .35rem;
+    }
 
-            .hitno-style-wrapper {
-                font-size: 1rem;
-                color: white;
-                font-weight: 500;
-                display: flex;
-                place-items: center;
+    .pricelist-name {
+        font-size: 1.1rem;
+        font-weight: 600;
+        line-height: 1.4;
+        color: $test-accent-color;
+    }
 
-                svg {
-                    color: $brand-yellow;
-                    animation: rotate 2s linear infinite;
-                }
-            }
+    .pricelist-anchor {
+        font-size: .85rem;
+        color: #5a5a5a;
+    }
+
+    .pricelist-price {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: .25rem;
+        white-space: nowrap;
+    }
+
+    .price-current {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: $brand-blue;
+    }
+
+    .price-regular {
+        font-size: .95rem;
+        color: #6b6b6b;
+        text-decoration: line-through;
+    }
+
+    .price-sale-name {
+        background-color: $brand-yellow;
+        border-radius: 8px;
+        padding: .1rem .5rem;
+        font-size: .8rem;
+        font-weight: 600;
+    }
+
+    .price-downloads {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .5rem 2rem;
+        padding-top: 1.25rem;
+
+        a {
+            color: $brand-blue;
+            font-size: .9rem;
         }
+    }
+}
 
-        .right {
-            transform: translate(-0px, -45px);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
-            gap: 0px;
-            margin-top: 4rem;
-            color: white;
+.prices-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    max-width: 640px;
+    padding: 0 2rem;
+    color: white;
+    text-align: center;
 
-            p {
-                text-align: center;
-            }
+    p {
+        margin: 0;
+    }
 
-            img {
-                //height: 400px;
-                object-fit: cover;
-                max-width: 95%;
-                border-radius: 16px;
-            }
+    .hitno-style-wrapper {
+        font-size: 1rem;
+        font-weight: 500;
+        display: flex;
+        place-items: center;
+        gap: .4rem;
 
+        svg {
+            color: $brand-yellow;
+            animation: rotate 2s linear infinite;
         }
     }
 
-
+    .cta-link {
+        margin-top: .5rem;
+    }
 }
 
-.price-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    width: 100%;
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    box-sizing: border-box;
-
-    .price-card {
+@media screen and (max-width: 768px) {
+    .prices-page .header-container {
         display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        background-color: $white;
-        border-top: 6px solid $brand-yellow;
-        border-radius: 16px;
-        padding: 1.5rem;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, .15);
+        place-content: center;
+    }
+}
 
-        h2 {
-            margin: 0;
-            font-size: 1.15rem;
-            font-weight: 600;
-            line-height: 1.4;
-            color: $test-accent-color;
+@media screen and (max-width: 580px) {
+    .prices-page {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .pricelist-panel {
+        padding: 1.25rem;
+
+        .pricelist-row {
+            gap: 1rem;
         }
 
-        .price-card-prices {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: baseline;
-            gap: .75rem;
-            margin-top: auto;
+        .pricelist-name {
+            font-size: 1rem;
         }
 
         .price-current {
-            font-size: 2.25rem;
-            font-weight: 700;
-            color: $brand-blue;
-        }
-
-        .price-regular {
-            font-size: 1.1rem;
-            color: #6b6b6b;
-            text-decoration: line-through;
-        }
-
-        .price-sale-name {
-            background-color: $brand-yellow;
-            border-radius: 8px;
-            padding: .15rem .6rem;
-            font-size: .85rem;
-            font-weight: 600;
-        }
-
-        .price-anchor {
-            margin: 0;
-            padding-top: .75rem;
-            border-top: 1px solid $light-blue-1;
-            font-size: .9rem;
-            color: #4a4a4a;
-        }
-    }
-}
-
-.price-downloads {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: .5rem 2rem;
-    padding: 1.5rem 2rem 1rem;
-
-    a {
-        color: $white;
-        font-size: .95rem;
-    }
-}
-
-@media screen and (max-width: 580px) {
-    .price-cards {
-        padding: 0 1rem;
-    }
-}
-
-.pre-price-text {
-    background-color: $brand-yellow;
-    padding: .5rem 1rem;
-    font-weight: 500;
-    border-radius: 12px;
-    width: fit-content;
-}
-
-.red-price-text {
-    color: white;
-    text-shadow: 1px 1px 1px #8b9dda;
-    font-weight: 500;
-    padding: .5rem;
-}
-
-
-@media screen and (max-width: 768px) {
-
-    .prices-page {
-        align-items: center;
-
-        .header-container {
-            display: flex;
-            place-content: center;
-            width: 100%;
-        }
-
-        .prices-content-container {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            justify-content: center;
-            align-items: center;
-
-
-            .right {
-                transform: translate(-0px, -30px);
-                margin-top: 0;
-
-                img {
-                    width: 550px;
-                    transition: .2s ease-in-out;
-                }
-            }
-        }
-    }
-}
-
-@media screen and (max-width: 580px) {
-
-
-    .prices-page {
-        align-items: center;
-
-        .header-container {
-            display: flex;
-            place-content: center;
-            width: 100%;
-        }
-
-        .prices-content-container {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            justify-content: center;
-            align-items: center;
-
-            .left {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-
-                .hitno-style-wrapper {
-                    width: 65%;
-                }
-            }
-
-            .right {
-                transform: translate(-0px, -30px);
-                margin-top: 0;
-                height: 40vh;
-
-                img {
-                    width: 400px;
-                }
-            }
+            font-size: 1.25rem;
         }
     }
 
+    .prices-info {
+        padding: 0;
+    }
 }
-
-
 
 @keyframes rotate {
     from {

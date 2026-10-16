@@ -1,9 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import img from "../assets/pricelist.jpg";
 import "../styles/pages/PriceList.scss";
-import "../styles/components/ContentBlock.scss";
 
 import "../styles/_cta_link.scss";
 import { MdOutlineEmergency as HitnoIcon } from "react-icons/md";
@@ -22,69 +20,72 @@ const PriceList = () => {
   return (
     <main className="prices-page">
       <div className="header-container">
-        <h1 className="prices-heading">{t("pagePrices")}</h1>
+        <h1 className="prices-heading">{t("priceListTitle")}</h1>
       </div>
-      <section className="prices-content-container">
-        <div className="right">
-          <img src={img}></img>
+
+      <section className="pricelist-panel">
+        <div className="pricelist-header">
+          <span>{t("priceListService")}</span>
+          <span>{t("priceListPrice")}</span>
         </div>
-        <div className="left">
-          <p style={{ color: "white", textAlign: "center" }}>
-            {t("pricePagePara1")}
-          </p>
-
-          <p className="hitno-style-wrapper" style={{ textAlign: "center" }}>
-            <span>
-              <HitnoIcon />
-            </span>
-            {t("hitno").toUpperCase()}
-          </p>
-
-          <Link className="cta-link" to="/contact">
-            {t("pageContact")}
-          </Link>
-        </div>
-      </section>
-
-      <section className="price-cards">
-        {pricelist.items.map((item) => (
-          <article className="price-card" key={item.name}>
-            <h2>{item.name}</h2>
-            <div className="price-card-prices">
-              {item.salePrice !== null ? (
-                <>
-                  <span className="price-current">
-                    {formatPrice(item.salePrice)}
+        <ul>
+          {pricelist.items.map((item) => (
+            <li className="pricelist-row" key={item.name}>
+              <div className="pricelist-service">
+                <span className="pricelist-name">{item.name}</span>
+                {item.anchorPrice !== null && (
+                  <span className="pricelist-anchor">
+                    {t("priceListAnchor", { date: pricelist.anchorDate })}:{" "}
+                    {formatPrice(item.anchorPrice)}
                   </span>
-                  <span className="price-regular">
+                )}
+              </div>
+              <div className="pricelist-price">
+                {item.salePrice !== null ? (
+                  <>
+                    <span className="price-current">
+                      {formatPrice(item.salePrice)}
+                    </span>
+                    <span className="price-regular">
+                      {formatPrice(item.price)}
+                    </span>
+                    {item.saleName && (
+                      <span className="price-sale-name">{item.saleName}</span>
+                    )}
+                  </>
+                ) : (
+                  <span className="price-current">
                     {formatPrice(item.price)}
                   </span>
-                  {item.saleName && (
-                    <span className="price-sale-name">{item.saleName}</span>
-                  )}
-                </>
-              ) : (
-                <span className="price-current">{formatPrice(item.price)}</span>
-              )}
-            </div>
-            {item.anchorPrice !== null && (
-              <p className="price-anchor">
-                {t("priceListAnchor", { date: pricelist.anchorDate })}:{" "}
-                {formatPrice(item.anchorPrice)}
-              </p>
-            )}
-          </article>
-        ))}
+                )}
+              </div>
+            </li>
+          ))}
+        </ul>
+        <div className="price-downloads">
+          <a href={pricelist.csvUrl} download>
+            {t("priceListDownload")}
+          </a>
+          <a href={pricelist.pageUrl} target="_blank" rel="noopener">
+            {t("priceListMarketino")}
+          </a>
+        </div>
       </section>
 
-      <div className="price-downloads">
-        <a href={pricelist.csvUrl} download>
-          {t("priceListDownload")}
-        </a>
-        <a href={pricelist.pageUrl} target="_blank" rel="noopener">
-          {t("priceListMarketino")}
-        </a>
-      </div>
+      <section className="prices-info">
+        <p>{t("pricePagePara1")}</p>
+
+        <p className="hitno-style-wrapper">
+          <span>
+            <HitnoIcon />
+          </span>
+          {t("hitno").toUpperCase()}
+        </p>
+
+        <Link className="cta-link" to="/contact">
+          {t("pageContact")}
+        </Link>
+      </section>
     </main>
   );
 };
