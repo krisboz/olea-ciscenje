@@ -15,6 +15,14 @@ const formatPrice = (value) =>
     value,
   );
 
+// Marketino's CSV has no unit column, so units are matched by service name.
+// If a service is renamed in Marketino, update its name here too.
+const PRICE_UNITS = {
+  "Usluga nadzora, upravljanja i održavanja nekretnine": "priceUnitAppointment",
+  "Usluge upravljanja i održavanja računalnih sustava, programa i marketing promocije":
+    "priceUnitHour",
+};
+
 const PriceList = () => {
   const { t } = useTranslation();
 
@@ -66,6 +74,11 @@ const PriceList = () => {
                         {formatPrice(item.price)}
                       </span>
                     )}
+                    {PRICE_UNITS[item.name] && (
+                      <span className="price-unit">
+                        {t(PRICE_UNITS[item.name])}
+                      </span>
+                    )}
                   </div>
                 </li>
               ))}
@@ -73,9 +86,6 @@ const PriceList = () => {
             <div className="price-downloads">
               <a href={pricelist.csvUrl} download>
                 {t("priceListDownload")}
-              </a>
-              <a href={pricelist.pageUrl} target="_blank" rel="noopener">
-                {t("priceListMarketino")}
               </a>
             </div>
           </section>

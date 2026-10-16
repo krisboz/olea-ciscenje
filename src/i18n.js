@@ -30,7 +30,8 @@ i18n.use(initReactI18next).init({
         priceListPrice: "Cijena",
         priceListAnchor: "Sidrena cijena na dan {{date}}",
         priceListDownload: "Preuzmi cjenik (CSV)",
-        priceListMarketino: "Cjenik na Marketinu",
+        priceUnitAppointment: "po terminu",
+        priceUnitHour: "po satu",
         homeAboutTitle: "O nama",
         homeAboutEmphasized:
           "OLEA Vam pruža usluge održavanja Vašega apartmana, kuće za odmor ili ville - prilagođeno Vašim potrebama na području grada Novalje.",
@@ -178,7 +179,8 @@ i18n.use(initReactI18next).init({
         priceListPrice: "Price",
         priceListAnchor: "Anchor price on {{date}}",
         priceListDownload: "Download price list (CSV)",
-        priceListMarketino: "Price list on Marketino",
+        priceUnitAppointment: "per appointment",
+        priceUnitHour: "per hour",
         homeAboutTitle: "About Us",
         homeAboutEmphasized:
           "OLEA provides you with maintenance services for your apartment, holiday home or villa - tailored to your needs in the area of the city of Novalja.",
@@ -321,7 +323,8 @@ i18n.use(initReactI18next).init({
         priceListPrice: "Preis",
         priceListAnchor: "Referenzpreis am {{date}}",
         priceListDownload: "Preisliste herunterladen (CSV)",
-        priceListMarketino: "Preisliste auf Marketino",
+        priceUnitAppointment: "pro Termin",
+        priceUnitHour: "pro Stunde",
         homeAboutTitle: "Über uns",
         homeAboutEmphasized:
           "OLEA bietet Ihnen Wartungsdienstleistungen für Ihre Wohnung, Ihr Ferienhaus oder Ihre Villa – zugeschnitten auf Ihre Bedürfnisse im Bereich der Stadt Novalja.",
